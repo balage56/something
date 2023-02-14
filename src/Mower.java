@@ -129,26 +129,26 @@ public class Mower {
 
         // CUT FROM TOP LEFT
         if (sign.equals(tiles[start][start])) {
-            cut00(lawn);
+            cutFrom00(lawn);
 
         // CUT FROM TOP RIGHT
         } else if (sign.equals(tiles[start][maxRow - 1])) {
-            cut0MaxRow(lawn);
+            cutFrom0MaxRow(lawn);
 
         // CUT FROM BOTTOM LEFT
         } else if (sign.equals(tiles[maxCol - 1][start])) {
-            cutMaxCol0(lawn);
+            cutFromMaxCol0(lawn);
 
         // CUT FROM BOTTOM RIGHT
         } else if (sign.equals(tiles[maxCol - 1][maxRow - 1])) {
-            cutMaxColMaxRow(lawn);
+            cutFromMaxColMaxRow(lawn);
         }
     }
 
 
-    public void cut00(Lawn lawn) throws InterruptedException {
+    public void cutFrom00(Lawn lawn) throws InterruptedException {
 
-        //CUT 1. ROW FORWARD, THEN NEXT ROW BACKWARD AND REPEAT FOR MAXCOL/2 IF IT'S ODD, CUT +1 ROW
+        //CUT 1. ROW FORWARD, THEN NEXT ROW BACKWARD AND REPEAT FOR MAXCOL/2 IF MAXCOL IS ODD, CUT +1 ROW
 
         start = 0;
 
@@ -190,7 +190,7 @@ public class Mower {
         }
     }
 
-    public void cut0MaxRow(Lawn lawn) throws InterruptedException {
+    public void cutFrom0MaxRow(Lawn lawn) throws InterruptedException {
 
         start = 0;
 
@@ -232,7 +232,7 @@ public class Mower {
         }
     }
 
-    public void cutMaxCol0(Lawn lawn) throws InterruptedException {
+    public void cutFromMaxCol0(Lawn lawn) throws InterruptedException {
 
         start = maxCol - 1;
 
@@ -274,7 +274,7 @@ public class Mower {
         }
     }
 
-    public void cutMaxColMaxRow(Lawn lawn) throws InterruptedException {
+    public void cutFromMaxColMaxRow(Lawn lawn) throws InterruptedException {
 
         start = maxCol - 1;
 
